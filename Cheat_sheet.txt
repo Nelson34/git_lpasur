@@ -1,0 +1,70 @@
+CHEAT SHEET – VIM
+
+Déplacement :
+Nous pouvons utiliser les touches h, j, k et l pour nous déplacer dans un fichier avec l’éditeur VIM.
+h permet de se diriger vers la gauche
+j permet de se déplacer vers le bas
+k permet de se déplacer vers le haut
+l permet de se diriger vers la droite
+Nous pouvons également utiliser les flèches de déplacement traditionnelles.
+w ou W permet de se déplacer sur une ligne de mot en mot. (On prend en compte ou non les apostrophes).
+b ou B permet de revenir en arrière sur une ligne de mot en mot. (De même, on prend en compte ou non les apostrophes).
+$ permet de se déplacer directement en fin de ligne avec le curseur
+0 permet de revenir en début de ligne
+gg permet de revenir à la première ligne du fichier
+NOMBRE G permet de déplacer à la ligne correspondante à NOMBRE
+G permet d’atteindre la fin du fichier
+
+Commandes :
+Pour sortir de vim, il faut être en mode normal pour taper la commande correspondante au fait de quitter le fichier. L’ajout d’un ! après une commande permettra de forcer la commande en question en évitant les alertes sur l’enregistrement de l’éditeur. Par exemple, avec :q! nous quittons l’éditeur sans enregistrer les éventuels changements apportés au fichier.
+echap permet de se placer en mode normal
+:q permet de quitter le fichier
+:q! permet de quitter en ignorant les éventuelles alertes
+:w enregistre le fichier en cours sous le nom déjà donné
+:wq! enregistre et quitte en ignorant les alertes éventuelles
+:w FICHIER enregistre le fichier en cours sur le disque avec le nom FICHIER
+
+:r FICHIER insère le fichier FICHIER sous la position du curseur
+:set ic  (ingnorecase) permet d’ignorer la casse lors des recherches
+:set is  (incsearch) permet de montrer les appariements partiels
+:set hls (hlsearch) permet de mettre en surbrillance les appariements
+:new permet d’ouvrir une nouveau fichier
+:split permet de scinder l’écran en deux
+
+CTRL + w permet de passer d’une fenêtre à l’autre
+
+Commande externe :
+Nous pouvons effectué une commande externe directement depuis vim. 
+:! permet de faire une commande externe 
+:!ls permet d’afficher les dossiers et fichiers présents dans le dossier courant
+:!rm FICHIER permet de supprimer le fichier FICHIER
+
+Effacement :
+x permet de supprimer un caractère sur lequel on est placé
+dw permet de supprimer du curseur jusqu’au mot suivant.
+d$ permet de supprimer du curseur jusqu’à la fin de la ligne.
+dd permet de supprimer une ligne entière 
+(Lorsque l’on efface un texte, on peut le coller avec la touche p après le curseur)
+
+Insertion : 
+En ouvrant vim, nous sommes en mode normal, il faut alors passer en mode insertion pour pouvoir écrire du texte.
+i permet de passer en mode insertion là où se trouve le curseur
+a insère du texte après la position du curseur
+A permet d’insérer du texte à la fin de la ligne
+o permet d’ouvrir une ligne en dessous du curseur
+O permet d’ouvrir une ligne au-dessus du curseur
+y copie du texte
+p colle du texte
+R permet de se mettre en mode remplacement. (Appuyer echap pour sortir)
+r CARACTERE permet de remplacer le caractère sous lequel le curseur pointe par CARACTERE
+:s/aa/bb permet de remplacer le premier aa par bb sur une ligne
+:s/aa/bbg permet de remplacer tous les aa par bb sur une ligne
+Nous pouvons annuler une action faite par erreur sous vim.
+u permet d’annuler l’action précédente
+U permet d’annuler tous les changements de la ligne sur laquelle on se trouve
+
+Recherche :
+/  TEXTE permet de trouver le texte TEXTE vers l’avant (n pour occurrence suivante, N occurrence précédente)
+?  TEXTE permet de trouver le texte vers l’arrière
+%  permet d’aller de ( à ) ou de [ à ] ou de { à }
+Cette commande est pratique lorsque l’on cherche une parenthèse non fermée par exemple, ou se placer d’un bout à l’autre d’un texte entre parenthèses, crochets ou accolades.
